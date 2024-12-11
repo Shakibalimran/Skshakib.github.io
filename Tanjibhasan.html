@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Ads and Earn Rewards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 150px;
+        }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .orange { background-color: orange; }
+        .red { background-color: red; }
+    </style>
+</head>
+<body>
+
+    <h1>Watch Ads and Earn Rewards</h1>
+    <button class="button blue" onclick="showAd()">Show Ad 1</button>
+    <button class="button green" onclick="showAd()">Show Ad 2</button>
+    <button class="button orange" onclick="showAd()">Show Ad 3</button>
+    <button class="button red" onclick="showAd()">Show Ad 4</button>
+
+    <!-- স্ক্রিপ্ট লোকালি হোস্ট করলে -->
+    <script src="js/vignette.min.js" data-zone="8610188" data-sdk="show_8610188"></script>
+
+    <script>
+        function showAd() {
+            try {
+                // চেক করুন স্ক্রিপ্ট সঠিকভাবে লোড হয়েছে কিনা
+                if (typeof vignetteSdk !== 'undefined') {
+                    console.log('Ad script loaded successfully.');
+                    vignetteSdk.showAd(); // বিজ্ঞাপন দেখান
+                } else {
+                    alert('Ad script not loaded properly.');
+                    console.error('Ad script is not loaded.');
+                }
+            } catch (error) {
+                console.error('Error showing ad:', error);
+                alert('An error occurred while trying to show the ad.');
+            }
+        }
+    </script>
+
+</body>
+</html>
